@@ -1,0 +1,25 @@
+import React from 'react';
+
+const defaultStyles = {
+  container: {
+    background: 'rgba(0, 0, 0, 0.7)',
+    color: 'white',
+    borderRadius: '3px',
+    padding: '10px',
+    pointerEvents: 'none',
+  },
+};
+
+const Greeting = ({ children, styles = {} }) => {
+  const mergedStyles = {
+    container: { ...defaultStyles.container, ...styles.container },
+  };
+
+  return (
+    <div style={mergedStyles.container}>
+      {children}
+    </div>
+  );
+};
+
+export default Greeting;
